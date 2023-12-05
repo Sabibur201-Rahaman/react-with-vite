@@ -5,7 +5,6 @@ import { CounterActions, decrement, increment, incrementByAmount } from "../stor
 
 const Counter = () => {
   const count = useSelector(state => state.counter.value);
-  console.log(count)
   const dispatch = useDispatch();
 
 
@@ -24,6 +23,20 @@ const Counter = () => {
           <button onClick={() => dispatch(decrement())}>Decrement</button>
           <button onClick={() => dispatch(incrementByAmount(5))}>IncrementByValue</button>
         </div>
+
+        {user ? (
+          // True block 
+          <div>
+            <h3>User Info</h3>
+            <p>Name: {user.name}</p>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
+            <p>Phone: {user.phone}</p>
+          </div>
+        ) : (
+          // Flase block 
+          <p>No user loggedin at this moment</p>
+        )}
       </div>
       <Footer />
     </div>
