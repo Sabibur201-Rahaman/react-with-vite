@@ -5,6 +5,7 @@ import { CounterActions, decrement, increment, incrementByAmount } from "../stor
 
 const Counter = () => {
   const count = useSelector(state => state.counter.value);
+  console.log(count)
   const dispatch = useDispatch();
 
 
